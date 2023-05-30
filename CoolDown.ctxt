@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=CoolDown
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=void\ Use()
+comment3.params=
+comment3.target=void\ Time()
+comment4.params=
+comment4.target=java.lang.Boolean\ getIsTime()
+numComments=5

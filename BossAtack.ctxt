@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=BossAtack
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ BossAtack\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=health\ boss\ obtainDamage
+comment1.target=void\ BossAtack(HealthPlayer,\ Boss1Ada,\ ObtainDamage)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ harm()
+numComments=4
