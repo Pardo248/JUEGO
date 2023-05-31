@@ -8,14 +8,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class NormalAttack extends Attack
 {
-    int NORMAL_MANA_GAIN = 3;
+    private int NORMAL_MANA_GAIN = 30;
     public void act()
     {
         if(Greenfoot.isKeyDown("e") && coolDown.getIsTime() == true){
+            if(coolDown.getIsTime() == true){
              healthBoss.LoseHeart(player.getNormalDamage());
              manaBar.GainMana(NORMAL_MANA_GAIN);
              
              coolDown.Use();
+             }
         }
     }
 }

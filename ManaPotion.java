@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class ManaPotion extends Items
 {
-    int manaGain = 10;
+    private int manaGain = 10;
     public void act()
     {
         if(Greenfoot.isKeyDown("2")){

@@ -18,8 +18,17 @@ public class Boss extends Actor
     static final int SLOW = 1;
     int bandera = 1;
     
-    private static final int COUNT_START_VALUE = 50;
-    private int COUNT = COUNT_START_VALUE;
+    Boolean isAtack;
+    
+    protected static final int COUNT_START_VALUE = 50;
+    protected int COUNT = COUNT_START_VALUE;
+    
+    protected static final int COUNT_DOWN_MOUTH_START_VALUE = 100;
+    protected int mouthDelay = COUNT_DOWN_MOUTH_START_VALUE;
+    public void Boss(){
+        
+    }
+    
     public void act()
     {
         
@@ -44,4 +53,8 @@ public class Boss extends Actor
         }
 
     }
+    public Boolean getIsAtack (){
+        return isAtack;
+    }
+    
 }

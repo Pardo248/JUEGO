@@ -13,9 +13,21 @@ public class WIN extends World
      * Constructor for objects of class WIN.
      * 
      */
+    private Boolean time = false;
+    //MyWorld NewWorld = new MyWorld();
     public WIN()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200, 750, 1);
+        
+        //CoolDown clok = n dew CoolDown();
+        
+        //clok.Use();
+        
+        //(time == false){
+           // time = clok.getIsTime();
+        //}
+        
+        //.setWorld(NewWorld);
     }
 }

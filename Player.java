@@ -8,13 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends Actor
 {
-    static final int BasicDamage = 5;
-    static final int MagicalDamage = 10;
-    static final int Ultimate = 20;
-    static int health = 100;
-    static int mana = 0;
-    static int damage = 1;
-    static int armor = 1;
+    private final int BASIC_DAMAGE = 50;
+    private final int MAGICAL_DAMAGE = 100;
+    private final int ULT_DAMAGE = 200;
+    private int health = 100;
+    private int mana = 0;
+    private int damage = 1;
+    private int armor = 1;
     
     /**
      * Act - do whatever the Player wants to do. This method is called whenever
@@ -28,13 +28,13 @@ public class Player extends Actor
         
     }
     public int getNormalDamage(){
-        return BasicDamage;
+        return BASIC_DAMAGE;
     }
     public int getMagicalDamage(){
-        return MagicalDamage;
+        return MAGICAL_DAMAGE;
     }
     public int getUltimateDamage(){
-        return Ultimate;
+        return ULT_DAMAGE;
     }
     public int getHealth(){
         return health;

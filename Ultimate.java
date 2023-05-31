@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Ultimate extends Attack
 {
-    int ULTIMATE_MANA_COST = 20;
+    private int ULTIMATE_MANA_COST = 20;
     public void act()
     {
         if(Greenfoot.isKeyDown("r") && manaBar.getMana() >= ULTIMATE_MANA_COST && coolDown.getIsTime() == true){

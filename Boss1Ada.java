@@ -9,17 +9,40 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Boss1Ada extends Boss
 {
     static int health = 1000;
-    static int damage = 5;
+    static int damage;
     static int armor = 1;
     private static final int FAST_STEP = 30;
-    public void Boss1Ada(HealthPlayer health,Boss1Ada boss,ObtainDamage obtainDamage){
+    private void SetBoss(int boss){
+        if(boss == 1){
+            setImage("images/Ada del bosque.png");
+        }else if(boss == 2){
+            setImage("images/BossDesert.png");
+        }else{
+            setImage("images/BossCastle.png");
+        }
+        
+        setStats(boss);
+    }
+    private void setStats(int boss){
+        if(boss == 1){
+             damage = 2;
+        }else if(boss == 2){
+             damage = 5;
+        }else{
+             damage = 10;
+        }  
+    }
+    public void Boss1Ada(HealthPlayer health,ObtainDamage obtainDamage,int boss){
         BossAtack bossAtack = new BossAtack();
-        bossAtack.BossAtack(health,boss,obtainDamage);
+        bossAtack.BossAtack(health,this,obtainDamage);
+        
+        SetBoss(boss);
     }
     public void act()
     {
         Start();
         Animation();
+        harm();
     }
     public int getHealth(){
         return health;
@@ -27,5 +50,14 @@ public class Boss1Ada extends Boss
     public int getDamage(){
         return damage;
     }
-    
+    protected void harm(){
+        mouthDelay--;
+        if(mouthDelay ==0){
+            mouthDelay = COUNT_DOWN_MOUTH_START_VALUE;
+            isAtack = true;
+        }else
+        {
+            isAtack = false;
+        }
+    }
 }

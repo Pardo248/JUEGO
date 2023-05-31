@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MagicAttack extends Attack
 {
-    int MAGIC_MANA_COST = 10;
+    private int MAGIC_MANA_COST = 10;
+
     public void act()
     {
         if(Greenfoot.isKeyDown("q")){

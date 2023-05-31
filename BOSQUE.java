@@ -13,25 +13,33 @@ public class BOSQUE extends World
      * Constructor for objects of class BOSQUE.
      * 
      */
+    int boss = 1;
     public BOSQUE(){    
         super(1200, 750, 1);// Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         prepare();
+        
     }
     private void prepare(){
         
-        Boss1Ada bossB = new Boss1Ada();
-        addObject(bossB,1,350);
+        
         
         Player player = new Player();
         addObject(player,600,375);
 
-        HealthBar healthBar = new HealthBar();
-        addObject(healthBar,600,50);
-        healthBar.HealthBar(bossB);
+        ObtainDamage obtainDamage = new ObtainDamage();
+        addObject(obtainDamage,600,375);
         
         HealthPlayer healthPlayer = new HealthPlayer();
         addObject(healthPlayer,140,715);
         healthPlayer.HealthPlayer(player);
+        
+        Boss1Ada bossB = new Boss1Ada();
+        addObject(bossB,1,350);
+        bossB.Boss1Ada(healthPlayer,obtainDamage,boss);
+        
+        HealthBar healthBar = new HealthBar();
+        addObject(healthBar,600,50);
+        healthBar.HealthBar(bossB);
         
         ManaBar manaPlayer = new ManaBar();
         addObject(manaPlayer,140,725);
@@ -45,8 +53,7 @@ public class BOSQUE extends World
         addObject(manaPotion,600,375);
         manaPotion.Items(healthPlayer,manaPlayer);
         
-        ObtainDamage obtainDamage = new ObtainDamage();
-        addObject(obtainDamage,600,375);
+        
         
         CoolDown coolDown = new CoolDown();
         addObject(coolDown,875,690);

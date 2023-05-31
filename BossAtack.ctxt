@@ -5,6 +5,4 @@ comment1.params=health\ boss\ obtainDamage
 comment1.target=void\ BossAtack(HealthPlayer,\ Boss1Ada,\ ObtainDamage)
 comment2.params=
 comment2.target=void\ act()
-comment3.params=
-comment3.target=void\ harm()
-numComments=4
+numComments=3

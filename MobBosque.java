@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Boss1Ada1 here.
+ * Write a description of class MonBosque here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Boss1Ada1 extends Boss
+public class MobBosque extends Boss
 {
     /**
-     * Act - do whatever the Boss1Ada1 wants to do. This method is called whenever
+     * Act - do whatever the MonBosque wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
