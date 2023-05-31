@@ -10,25 +10,17 @@ public class BOTON extends Actor
 {
     BOSQUE bosque = new BOSQUE();
     CASTLE castle = new CASTLE();
+    DESERT desert = new DESERT();
     public void act()
     {   
         if(Greenfoot.isKeyDown("p")){
              Greenfoot.setWorld(bosque);
         }
-        /*if(Greenfoot.isKeyDown("2")){
-             Greenfoot.setWorld(start);
+        if(Greenfoot.isKeyDown("o")){
+             Greenfoot.setWorld(desert);
         }
-        if(Greenfoot.isKeyDown("3")){
-             Greenfoot.setWorld(start);
+        if(Greenfoot.isKeyDown("i")){
+             Greenfoot.setWorld(castle);
         }
-        if(Greenfoot.isKeyDown("4")){
-             Greenfoot.setWorld(start);
-        }
-        if(Greenfoot.isKeyDown("5")){
-             Greenfoot.setWorld(start);
-        }
-        if(Greenfoot.isKeyDown("6")){
-             Greenfoot.setWorld(start);
-        }*/
     }
 }
