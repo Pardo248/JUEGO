@@ -10,9 +10,14 @@ public class Items extends Actor
 {
     HealthPlayer healthPlayer;
     ManaBar manaBar;
-    public void Items(HealthPlayer healthPlayer, ManaBar manaBar){
+    protected int cantidad;
+    protected final int TIME_START_VALUE = 50;
+    protected int time = TIME_START_VALUE;
+    
+    public void Items(HealthPlayer healthPlayer, ManaBar manaBar, int cantidad){
         this.healthPlayer = healthPlayer;
         this.manaBar = manaBar;
+        this.cantidad = cantidad;
     }
     public void act()
     {

@@ -14,15 +14,11 @@ public class Player extends Actor
     private int health = 100;
     private int mana = 0;
     private int damage = 1;
-    private int armor = 1;
     
     /**
      * Act - do whatever the Player wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void Player(Boss1Ada boss){
-        //HeadBar head 
-    }
     public void act()
     {
         

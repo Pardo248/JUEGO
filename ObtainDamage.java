@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class ObtainDamage extends Actor
 {
-    private static final int COUNT_DOWN_MOUTH_START_VALUE = 4;
-    private int mouthDelay = COUNT_DOWN_MOUTH_START_VALUE;
+    private static final int COUNT_START_VALUE = 4;
+    private int count = COUNT_START_VALUE;
     public void act()
     {
         Return();
@@ -18,9 +18,9 @@ public class ObtainDamage extends Actor
         setImage("images/Damage.png");
     }
     private void Return(){
-        mouthDelay--;
-        if(mouthDelay ==0){
-            mouthDelay = COUNT_DOWN_MOUTH_START_VALUE;
+        count--;
+        if(count == 0){
+            count = COUNT_START_VALUE;
             setImage("images/Transparente.png");
             
         }

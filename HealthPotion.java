@@ -8,11 +8,22 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class HealthPotion extends Items
 {
-    int healGain = 10;
+    private final int HEALTH_GAIN = 50;
     public void act()
     {
-        if(Greenfoot.isKeyDown("1")){
-            healthPlayer.GainHealth(healGain);
+        if(time != 0)
+        {
+            time--;
+        }else
+        {
+           if(Greenfoot.isKeyDown("1") && cantidad > 0){
+            time = TIME_START_VALUE;
+            cantidad--;
+            healthPlayer.GainHealth(HEALTH_GAIN);
         }
+        }
+        
+        World world = getWorld();
+        world.showText(""+ cantidad,1170,250);
     }
 }

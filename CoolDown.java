@@ -17,7 +17,7 @@ public class CoolDown extends Actor
         
         if(time != 0)
         {
-            Time();
+            time--;
             isTime = false;
         }else
         {
@@ -26,9 +26,6 @@ public class CoolDown extends Actor
     }
     public void Use(){
         time = TIME_START_VALUE;
-    }
-    private void Time(){
-        time--;
     }
     public Boolean getIsTime (){
         return isTime;

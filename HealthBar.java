@@ -8,14 +8,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class HealthBar extends Actor
 {
-    int health;
-    Boss1Ada boss;
+    private int health;
+    Enemy enemy;
     
-    WIN losse = new WIN();
+    private int time = 0;
+    private float score;
     
-    public void HealthBar(Boss1Ada actualBoss){
-        boss = actualBoss;
-        health = boss.getHealth();
+    public void HealthBar(Enemy enemy){
+        this.enemy = enemy;
+        health = enemy.getHealth();
         
         setImage(new GreenfootImage(1003,12));
         getImage().drawRect(0,0,1002,11);
@@ -30,14 +31,22 @@ public class HealthBar extends Actor
         getImage().fillRect(1,1,1002,10);
         getImage().setColor(Color.GREEN);
         getImage().fillRect(1,1,health,10);
+        
+        time++;
     }
     public void LoseHeart(int damage){
         health = health - damage;
         if (health <= 0){
-            LOSSE();
+            WIN();
         }
     }
-    public void LOSSE (){
-        Greenfoot.setWorld(losse);
+    public void WIN(){
+        score = 100000 / time;
+        
+        WIN win = new WIN(score);
+        Greenfoot.setWorld(win);
+    }
+    public int getHealth(){
+        return health;
     }
 }

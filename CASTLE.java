@@ -9,15 +9,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class CASTLE extends World
 {
 
-    int boss = 3;
-    public CASTLE(){    
+    private int enemy;
+    private int cantBase;
+    
+    public CASTLE(int trofeos,int enemy){    
         super(1200, 750, 1);// Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        prepare();
-        
+        cantBase = trofeos;
+        this.enemy = enemy;
+        Prepare();
     }
-    private void prepare(){
-        
-        
+    private void Prepare(){
         
         Player player = new Player();
         addObject(player,600,375);
@@ -29,13 +30,13 @@ public class CASTLE extends World
         addObject(healthPlayer,140,715);
         healthPlayer.HealthPlayer(player);
         
-        Boss1Ada bossB = new Boss1Ada();
-        addObject(bossB,1,350);
-        bossB.Boss1Ada(healthPlayer,obtainDamage,boss);
+        Enemy actualEnemy = new Enemy();
+        addObject(actualEnemy,1,350);
+        actualEnemy.Enemy(enemy);
         
         HealthBar healthBar = new HealthBar();
         addObject(healthBar,600,50);
-        healthBar.HealthBar(bossB);
+        healthBar.HealthBar(actualEnemy);
         
         ManaBar manaPlayer = new ManaBar();
         addObject(manaPlayer,140,725);
@@ -43,11 +44,11 @@ public class CASTLE extends World
         
         HealthPotion healthPotion = new HealthPotion();
         addObject(healthPotion,600,375);
-        healthPotion.Items(healthPlayer,manaPlayer);
+        healthPotion.Items(healthPlayer,manaPlayer,cantBase);
         
         ManaPotion manaPotion = new ManaPotion();
         addObject(manaPotion,600,375);
-        manaPotion.Items(healthPlayer,manaPlayer);
+        manaPotion.Items(healthPlayer,manaPlayer,cantBase);
         
         CoolDown coolDown = new CoolDown();
         addObject(coolDown,875,690);
@@ -70,8 +71,8 @@ public class CASTLE extends World
         addObject(ultimate,340,375);
         ultimate.Attack(healthBar,player,manaPlayer,coolDownUltimate);
         
-        BossAtack bossAtack = new BossAtack();
-        addObject(bossAtack,340,375);
-        bossAtack.BossAtack(healthPlayer,bossB,obtainDamage);
+        EnemyAtack enemyAtack = new EnemyAtack();
+        addObject(enemyAtack,340,375);
+        enemyAtack.EnemyAtack(healthPlayer,actualEnemy,obtainDamage);
     }
 }

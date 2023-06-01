@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class ManaBar extends Actor
 {
-    int mana;
+    private int mana;
     Player player;
     public void ManaBar(Player actualPlayer){
         player = actualPlayer;

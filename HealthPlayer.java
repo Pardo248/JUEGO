@@ -10,7 +10,9 @@ public class HealthPlayer extends Actor
 {
     int health;
     Player player;
-    LOSE losse = new LOSE();
+    
+    int time = 0;
+    float score;
     
     public void HealthPlayer(Player actualPlayer){
         
@@ -31,6 +33,8 @@ public class HealthPlayer extends Actor
         getImage().fillRect(1,1,99,28);
         getImage().setColor(Color.GREEN);
         getImage().fillRect(1,1,health,28);
+        
+        time++;
     }
     public void LoseHeart(int damage){
         health = health - damage;
@@ -42,6 +46,11 @@ public class HealthPlayer extends Actor
         health = health + healthGain;
     }
     public void LOSSE (){
+        
+        score = time / 1000;
+        
+        LOSE losse = new LOSE(score);
+        
         Greenfoot.setWorld(losse);
     }
 }
